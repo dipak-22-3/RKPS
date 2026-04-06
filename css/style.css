@@ -1,7 +1,3 @@
-/* ========================= */
-/* RKPS CLEAN PREMIUM CSS */
-/* ========================= */
-
 /* RESET */
 * {
     margin: 0;
@@ -9,33 +5,30 @@
     box-sizing: border-box;
 }
 
+/* ROOT COLORS */
+:root {
+    --primary: #1e3a8a;
+    --secondary: #3b82f6;
+    --light: #f8fafc;
+    --dark: #1e293b;
+    --accent: #fbbf24;
+}
+
 /* BODY */
 body {
     font-family: 'Poppins', sans-serif;
-    background: #0f172a;
-    color: #ffffff;
-    line-height: 1.6;
+    background: var(--light);
+    color: var(--dark);
 }
 
-/* CONTAINER */
-.container {
-    max-width: 1100px;
-    margin: auto;
-    padding: 0 20px;
-}
-
-/* ================= NAVBAR ================= */
-
+/* NAVBAR */
 .navbar {
     position: fixed;
     width: 100%;
     top: 0;
+    background: var(--primary);
+    color: white;
     z-index: 1000;
-
-    background: rgba(15, 23, 42, 0.9);
-    backdrop-filter: blur(8px);
-
-    border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
 /* NAV FLEX */
@@ -43,14 +36,14 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 0;
+    padding: 15px 20px;
 }
 
 /* LOGO */
 .logo {
     font-size: 22px;
-    font-weight: 600;
-    color: #38bdf8;
+    font-weight: bold;
+    color: #fff;
 }
 
 /* LINKS */
@@ -63,34 +56,33 @@ body {
     margin-left: 25px;
 }
 
-/* LINK STYLE */
+/* LINK */
 .nav-links a {
     text-decoration: none;
-    color: #ffffff;
+    color: white;
     font-size: 15px;
     transition: 0.3s;
 }
 
 /* HOVER */
 .nav-links a:hover {
-    color: #38bdf8;
+    color: var(--accent);
 }
 
 /* ACTIVE */
 .nav-links a.active {
-    color: #38bdf8;
+    border-bottom: 2px solid var(--accent);
 }
 
 /* BUTTON */
 .btn {
+    background: var(--accent);
     padding: 6px 15px;
-    background: #38bdf8;
-    border-radius: 20px;
+    border-radius: 5px;
     color: #000 !important;
 }
 
-/* ================= HERO ================= */
-
+/* HERO */
 .hero {
     height: 100vh;
     display: flex;
@@ -98,62 +90,41 @@ body {
     justify-content: center;
 
     text-align: center;
-    padding: 0 20px;
 
-    background: linear-gradient(to right, #020617, #0f172a);
+    background: linear-gradient(to right, #1e3a8a, #3b82f6);
+    color: white;
 }
 
-.hero-content h1 {
+.hero h1 {
     font-size: 40px;
     margin-bottom: 15px;
 }
 
-.hero-content p {
+.hero p {
     font-size: 18px;
     margin-bottom: 20px;
-    color: #cbd5f5;
 }
 
-/* HERO BUTTON */
+/* BUTTON */
 .hero-btn {
-    display: inline-block;
     padding: 10px 25px;
-    background: #38bdf8;
+    background: var(--accent);
     color: #000;
-    border-radius: 25px;
     text-decoration: none;
-    transition: 0.3s;
+    border-radius: 5px;
 }
 
-.hero-btn:hover {
-    background: #0ea5e9;
-}
-
-/* ================= SECTION ================= */
-
+/* SECTION */
 .section {
     padding: 80px 20px;
     text-align: center;
 }
 
 .section h2 {
-    font-size: 28px;
     margin-bottom: 20px;
 }
 
-.section p {
-    max-width: 600px;
-    margin: auto;
-    color: #cbd5f5;
-}
-
-/* DARK SECTION */
-.section.dark {
-    background: #020617;
-}
-
-/* ================= CARDS ================= */
-
+/* CARDS */
 .cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -162,30 +133,26 @@ body {
 }
 
 .card {
-    background: #1e293b;
-    padding: 30px;
-    border-radius: 10px;
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
     transition: 0.3s;
 }
 
-/* CARD HOVER */
 .card:hover {
     transform: translateY(-5px);
-    background: #334155;
 }
 
-/* ================= FOOTER ================= */
-
+/* FOOTER */
 .footer {
-    background: #020617;
-    text-align: center;
+    background: var(--primary);
+    color: white;
     padding: 20px;
-    font-size: 14px;
-    color: #94a3b8;
+    text-align: center;
 }
 
-/* ================= MOBILE ================= */
-
+/* MOBILE */
 .menu-toggle {
     display: none;
     font-size: 24px;
@@ -201,12 +168,10 @@ body {
         right: -100%;
         width: 70%;
         height: 100vh;
-
         flex-direction: column;
         align-items: center;
         justify-content: center;
-
-        background: #020617;
+        background: var(--primary);
         transition: 0.4s;
     }
 
@@ -220,13 +185,5 @@ body {
 
     .menu-toggle {
         display: block;
-    }
-
-    .hero-content h1 {
-        font-size: 28px;
-    }
-
-    .hero-content p {
-        font-size: 15px;
     }
 }
