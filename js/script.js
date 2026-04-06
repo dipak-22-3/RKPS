@@ -183,7 +183,27 @@ window.addEventListener("load", () => {
     document.body.style.opacity = "0";
 
     setTimeout(() => {
-        document.body.style.transition = "opacity 0.5s ease";
+        document.body.style.transition = "opacity 1.5s ease";
         document.body.style.opacity = "1";
     }, 100);
 });
+/* ================= OUTSIDE CLICK CLOSE ================= */
+
+document.addEventListener("click", function (e) {
+
+    const isMenuOpen = navLinks.classList.contains("active");
+
+    if (isMenuOpen) {
+
+        // Check click inside menu or toggle
+        const isClickInsideMenu = navLinks.contains(e.target);
+        const isClickToggle = menuToggle.contains(e.target);
+
+        if (!isClickInsideMenu && !isClickToggle) {
+            navLinks.classList.remove("active");
+            menuToggle.innerHTML = "☰";
+        }
+    }
+
+});
+
