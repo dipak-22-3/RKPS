@@ -4,127 +4,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>RK Public School</title>
 
-    <!-- CSS LINK -->
-    <link rel="stylesheet" href="css/navbar.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
 
-    <!-- GOOGLE ICONS -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<!-- ================= NAVBAR START ================= -->
+<!-- ================= NAVBAR ================= -->
+<header class="navbar">
+    <div class="container">
 
-<header class="navbar" id="navbar">
-
-    <div class="nav-container">
-
-        <!-- LOGO -->
         <div class="logo">
             RKPS
         </div>
 
-        <!-- NAVIGATION LINKS -->
         <nav>
             <ul class="nav-links" id="navLinks">
-
-                <li>
-                    <a href="#" class="active">
-                        Home
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#about">
-                        About
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#academics">
-                        Academics
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#facilities">
-                        Facilities
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#gallery">
-                        Gallery
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#contact">
-                        Contact
-                    </a>
-                </li>
-
-                <!-- OPTIONAL BUTTON -->
-                <li>
-                    <a href="#admission" class="nav-btn">
-                        Admission
-                    </a>
-                </li>
-
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="facilities.html">Facilities</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="admission.html" class="btn">Admission</a></li>
             </ul>
         </nav>
 
-        <!-- MOBILE MENU TOGGLE -->
         <div class="menu-toggle" id="menuToggle">
-            <span class="material-icons">menu</span>
+            ☰
         </div>
 
     </div>
-
 </header>
 
-<!-- ================= NAVBAR END ================= -->
-
-
-<!-- ================= DEMO CONTENT START ================= -->
-
-<section style="margin-top:100px; padding:50px; color:white; text-align:center;">
-    <h1>RK Public School</h1>
-    <p>Premium School Website Demo</p>
+<!-- ================= HERO ================= -->
+<section class="hero">
+    <div class="hero-content">
+        <h1>Welcome to RK Public School</h1>
+        <p>Building Future Leaders with Knowledge & Discipline</p>
+        <a href="admission.html" class="hero-btn">Apply Now</a>
+    </div>
 </section>
 
-<section id="about" style="height:100vh; padding:50px; color:white;">
-    <h2>About Section</h2>
+<!-- ================= ABOUT PREVIEW ================= -->
+<section class="section">
+    <h2>About Our School</h2>
+    <p>
+        RK Public School focuses on quality education, discipline, and overall development of students.
+    </p>
 </section>
 
-<section id="academics" style="height:100vh; padding:50px; color:white;">
-    <h2>Academics Section</h2>
+<!-- ================= FACILITIES ================= -->
+<section class="section dark">
+    <h2>Our Facilities</h2>
+    <div class="cards">
+
+        <div class="card">Smart Classrooms</div>
+        <div class="card">Science Lab</div>
+        <div class="card">Library</div>
+        <div class="card">Sports Ground</div>
+
+    </div>
 </section>
 
-<section id="facilities" style="height:100vh; padding:50px; color:white;">
-    <h2>Facilities Section</h2>
-</section>
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+    <p>© 2026 RK Public School | All Rights Reserved</p>
+</footer>
 
-<section id="gallery" style="height:100vh; padding:50px; color:white;">
-    <h2>Gallery Section</h2>
-</section>
-
-<section id="contact" style="height:100vh; padding:50px; color:white;">
-    <h2>Contact Section</h2>
-</section>
-
-<section id="admission" style="height:100vh; padding:50px; color:white;">
-    <h2>Admission Section</h2>
-</section>
-
-<!-- ================= DEMO CONTENT END ================= -->
-
-
-<!-- ================= JS LINK ================= -->
-<script src="js/navbar.js"></script>
+<!-- JS -->
+<script src="js/script.js"></script>
 
 </body>
 
