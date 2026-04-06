@@ -1,0 +1,294 @@
+/* ============================= */
+/* RKPS PREMIUM NAVBAR CSS */
+/* ============================= */
+
+/* GOOGLE FONT */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ROOT VARIABLES (COLOR SYSTEM) */
+:root {
+    --primary: #38bdf8;
+    --secondary: #6366f1;
+    --dark: #0f172a;
+    --dark-light: #1e293b;
+    --white: #ffffff;
+    --glass: rgba(255, 255, 255, 0.08);
+    --border: rgba(255, 255, 255, 0.15);
+
+    --neumorph-light: rgba(255,255,255,0.05);
+    --neumorph-dark: rgba(0,0,0,0.5);
+
+    --gradient: linear-gradient(135deg, #38bdf8, #6366f1);
+}
+
+/* BODY */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #0f172a, #020617);
+    min-height: 200vh;
+}
+
+/* ============================= */
+/* NAVBAR BASE */
+/* ============================= */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    background: var(--glass);
+
+    border-bottom: 1px solid var(--border);
+
+    box-shadow:
+        8px 8px 25px var(--neumorph-dark),
+        -8px -8px 25px var(--neumorph-light);
+
+    transition: all 0.4s ease;
+}
+
+/* SCROLLED NAVBAR */
+.navbar.scrolled {
+    background: rgba(15, 23, 42, 0.95);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.7);
+}
+
+/* ============================= */
+/* NAV CONTAINER */
+/* ============================= */
+
+.nav-container {
+    max-width: 1200px;
+    margin: auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 15px 20px;
+}
+
+/* ============================= */
+/* LOGO */
+/* ============================= */
+
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 2px;
+
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    position: relative;
+}
+
+/* LOGO GLOW */
+.logo::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+
+    background: var(--gradient);
+    filter: blur(15px);
+    opacity: 0.3;
+
+    z-index: -1;
+}
+
+/* ============================= */
+/* NAV LINKS */
+/* ============================= */
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+/* EACH LINK ITEM */
+.nav-links li {
+    margin-left: 30px;
+}
+
+/* LINK STYLE */
+.nav-links a {
+    text-decoration: none;
+    color: var(--white);
+    font-size: 15px;
+    font-weight: 500;
+
+    position: relative;
+    padding: 5px 0;
+
+    transition: all 0.3s ease;
+}
+
+/* UNDERLINE ANIMATION */
+.nav-links a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    width: 0%;
+    height: 2px;
+
+    background: var(--gradient);
+    transition: width 0.4s ease;
+}
+
+/* HOVER EFFECT */
+.nav-links a:hover::before {
+    width: 100%;
+}
+
+.nav-links a:hover {
+    color: var(--primary);
+}
+
+/* ============================= */
+/* ACTIVE LINK */
+/* ============================= */
+
+.nav-links a.active {
+    color: var(--primary);
+}
+
+.nav-links a.active::before {
+    width: 100%;
+}
+
+/* ============================= */
+/* MENU TOGGLE (MOBILE) */
+/* ============================= */
+
+.menu-toggle {
+    display: none;
+    font-size: 28px;
+    color: var(--white);
+    cursor: pointer;
+
+    transition: transform 0.3s ease;
+}
+
+/* HOVER ROTATE */
+.menu-toggle:hover {
+    transform: rotate(90deg);
+}
+
+/* ============================= */
+/* MOBILE DESIGN */
+/* ============================= */
+
+@media (max-width: 768px) {
+
+    .nav-links {
+        position: fixed;
+        top: 70px;
+        right: -100%;
+
+        width: 75%;
+        height: 100vh;
+
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        background: rgba(15, 23, 42, 0.95);
+        backdrop-filter: blur(25px);
+
+        transition: right 0.5s ease;
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    .nav-links li {
+        margin: 25px 0;
+    }
+
+    .nav-links a {
+        font-size: 18px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
+
+/* ============================= */
+/* GLASS BUTTON (OPTIONAL) */
+/* ============================= */
+
+.nav-btn {
+    padding: 8px 18px;
+    border-radius: 20px;
+
+    background: var(--glass);
+    border: 1px solid var(--border);
+
+    backdrop-filter: blur(10px);
+
+    color: var(--white);
+    text-decoration: none;
+
+    transition: 0.3s ease;
+}
+
+/* BUTTON HOVER */
+.nav-btn:hover {
+    background: var(--gradient);
+    color: #fff;
+    box-shadow: 0 0 20px rgba(99,102,241,0.6);
+}
+
+/* ============================= */
+/* SMOOTH SCROLL */
+/* ============================= */
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* ============================= */
+/* EXTRA ANIMATION (GLOW LINE) */
+/* ============================= */
+
+.navbar::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    height: 2px;
+
+    background: linear-gradient(90deg, transparent, #38bdf8, transparent);
+    animation: glow 3s linear infinite;
+}
+
+@keyframes glow {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
